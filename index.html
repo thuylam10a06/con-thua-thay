@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thuỳ Lâm's Colorful World ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+ --pink:#ff91bd;
+ --yellow:#ffe477;
+ --blue:#91dcff;
+ --green:#a8e9b5;
+ --red:#ff8989;
+ --purple:#d9b5ff;
+ --dark:#39435d;
+}
+
+* {box-sizing:border-box;margin:0;padding:0}
+
+html {scroll-behavior:smooth}
+
+body {
+ font-family:Nunito,sans-serif;
+ color:var(--dark);
+ background:linear-gradient(135deg,#fff8d9,#e7f7ff,#ffeaf3);
+}
+
+a {text-decoration:none;color:inherit}
+
+.container {
+ width:90%;
+ max-width:1100px;
+ margin:auto;
+}
+
+header {
+ padding:18px 0;
+ position:sticky;
+ top:0;
+ z-index:10;
+ background:#fffaf0eF;
+ backdrop-filter:blur(12px);
+}
+
+nav {
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ flex-wrap:wrap;
+ gap:12px;
+}
+
+.logo {
+ font-size:23px;
+ font-weight:900;
+ color:#ff6198;
+}
+
+nav a {
+ font-size:13px;
+ font-weight:900;
+ margin:5px;
+}
+
+nav a:hover {color:#ff6198}
+
+.hero {
+ display:grid;
+ grid-template-columns:1.2fr .8fr;
+ align-items:center;
+ gap:25px;
+ padding:65px 0;
+}
+
+.hello {
+ background:var(--green);
+ padding:9px 17px;
+ border-radius:30px;
+ font-weight:900;
+}
+
+h1 {
+ font-size:clamp(38px,7vw,65px);
+ line-height:1.15;
+ margin:20px 0;
+}
+
+.pink-text {color:#ff6198}
+
+.hero p {
+ line-height:1.9;
+}
+
+.hero-image {
+ background:var(--yellow);
+ border:8px solid white;
+ border-radius:50%;
+ width:280px;
+ height:280px;
+ display:grid;
+ place-items:center;
+ font-size:130px;
+ margin:auto;
+ box-shadow:0 12px 25px #0001;
+ animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+ 50% {transform:translateY(-12px)}
+}
+
+.btn {
+ display:inline-block;
+ background:#ff6198;
+ color:white;
+ padding:12px 23px;
+ border-radius:30px;
+ font-weight:900;
+ margin-top:18px;
+ border:none;
+ cursor:pointer;
+}
+
+section {padding:45px 0}
+
+.title {
+ text-align:center;
+ font-size:32px;
+ font-weight:900;
+ margin-bottom:25px;
+}
+
+.card {
+ background:#ffffffdb;
+ border:3px solid white;
+ padding:23px;
+ border-radius:25px;
+ box-shadow:0 7px 15px #0000000b;
+}
+
+.grid {
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:17px;
+}
+
+.card h3 {
+ font-size:20px;
+ margin:10px 0;
+}
+
+.card p {
+ line-height:1.8;
+}
+
+.emoji {
+ font-size:45px;
+}
+
+.pink {background:#ffe0ec}
+.blue {background:#d5f2ff}
+.yellow {background:#fff1b8}
+.green {background:#d9f5dd}
+.purple {background:#eedfff}
+.red {background:#ffe0dc}
+
+.about {
+ line-height:2.3;
+}
+
+.about b {color:#ff6198}
+
+.tags {margin-top:12px}
+
+.tag {
+ display:inline-block;
+ background:#e4f5ff;
+ border-radius:20px;
+ padding:7px 12px;
+ margin:4px;
+ font-size:13px;
+ font-weight:900;
+}
+
+/* MUSIC PLAYER */
+
+.music-box {
+ background:linear-gradient(135deg,#ffe0ec,#fff1b8);
+ padding:25px;
+ border-radius:28px;
+ border:4px solid white;
+ text-align:center;
+}
+
+.upload-area {
+ background:#ffffffd9;
+ padding:25px;
+ border:2px dashed #ff8bb6;
+ border-radius:20px;
+ margin:20px auto;
+ max-width:600px;
+}
+
+input[type=file] {
+ width:100%;
+ padding:12px;
+ background:#fff;
+ border-radius:12px;
+ margin-top:12px;
+}
+
+audio {
+ width:100%;
+ margin-top:18px;
+}
+
+#trackName {
+ font-weight:900;
+ margin-top:12px;
+}
+
+.music-btn {
+ background:#ff6198;
+ color:white;
+ border:0;
+ border-radius:20px;
+ padding:10px 18px;
+ margin:8px;
+ font-weight:900;
+ cursor:pointer;
+}
+
+.spotify {
+ width:100%;
+ max-width:550px;
+ height:152px;
+ border:0;
+ border-radius:15px;
+ margin-top:20px;
+}
+
+/* ANIMALS */
+
+.animals {
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:15px;
+}
+
+.animal {
+ text-align:center;
+ background:white;
+ border:3px solid white;
+ border-radius:22px;
+ padding:20px;
+ font-size:55px;
+ transition:.2s;
+}
+
+.animal:hover {
+ transform:scale(1.08) rotate(-4deg);
+}
+
+/* MEMORY */
+
+.memory {
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:15px;
+}
+
+.memory-item {
+ min-height:150px;
+ display:grid;
+ place-items:center;
+ border-radius:22px;
+ font-size:55px;
+ border:3px solid white;
+}
+
+/* GUESTBOOK */
+
+.guestbook {
+ background:#ffffffd9;
+ padding:25px;
+ border-radius:25px;
+ border:3px solid white;
+}
+
+input,textarea {
+ width:100%;
+ padding:13px;
+ border:2px solid #ffd0e0;
+ border-radius:13px;
+ margin:8px 0;
+ font:inherit;
+}
+
+textarea {resize:vertical}
+
+.message {
+ background:#fff0f5;
+ padding:13px;
+ border-radius:14px;
+ margin-top:12px;
+}
+
+footer {
+ text-align:center;
+ padding:40px 10px;
+ font-weight:900;
+ line-height:2;
+}
+
+@media(max-width:750px) {
+ .hero {grid-template-columns:1fr;text-align:center}
+ .hero-image {width:220px;height:220px;font-size:100px}
+ .grid {grid-template-columns:1fr}
+ .animals {grid-template-columns:repeat(2,1fr)}
+ .memory {grid-template-columns:repeat(2,1fr)}
+ nav {justify-content:center}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <nav class="container">
+  <div class="logo">🐾 LAM'S WORLD ♡</div>
+  <div>
+   <a href="#home">HOME</a>
+   <a href="#about">ABOUT</a>
+   <a href="#hobby">HOBBY</a>
+   <a href="#music">MUSIC</a>
+   <a href="#gallery">GALLERY</a>
+  </div>
+ </nav>
+</header>
+
+<main class="container">
+
+<!-- HOME -->
+<section class="hero" id="home">
+ <div>
+  <span class="hello">🌷 WELCOME TO MY WEBSITE!</span>
+  <h1>
+   Hello!<br>
+   I'm <span class="pink-text">Thuỳ Lâm</span> ♡
+  </h1>
+  <p>
+   Chào mừng cậu đến với thế giới nhỏ của Nguyễn Thuỳ Lâm.
+   Một nơi chứa đầy âm nhạc, những người bạn đáng yêu
+   và vô vàn màu sắc!
+  </p>
+  <a class="btn" href="#about">Khám phá thế giới của tớ ✨</a>
+ </div>
+
+ <div class="hero-image">🐱</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+ <h2 class="title">💌 ABOUT ME</h2>
+ <div class="card about">
+  <p>🌸 <b>Họ và tên:</b> Nguyễn Thuỳ Lâm</p>
+  <p>🎓 <b>Trường:</b> THPT Phú Nhuận</p>
+  <p>📚 <b>Lớp:</b> 10A6</p>
+  <p>🎀 <b>Phong cách:</b> Colorful, cute, playful</p>
+  <p>🎧 <b>Ca sĩ yêu thích:</b> SOOBIN</p>
+  <p>🌈 <b>Châm ngôn:</b> Enjoy every little moment!</p>
+  <div class="tags">
+   <span class="tag">🐱 Cat lover</span>
+   <span class="tag">🎵 Music</span>
+   <span class="tag">🌸 Anime</span>
+   <span class="tag">🎮 Gaming</span>
+   <span class="tag">💗 Happy life</span>
+  </div>
+ </div>
+</section>
+
+<!-- PERSONALITY -->
+<section>
+ <h2 class="title">🎀 MY PERSONALITY</h2>
+ <div class="grid">
+  <div class="card pink">
+   <div class="emoji">🌷</div>
+   <h3>Creative</h3>
+   <p>Yêu thích sự sáng tạo và những điều mới mẻ.</p>
+  </div>
+  <div class="card yellow">
+   <div class="emoji">☀️</div>
+   <h3>Cheerful</h3>
+   <p>Luôn muốn cuộc sống có thêm nhiều niềm vui.</p>
+  </div>
+  <div class="card blue">
+   <div class="emoji">🦋</div>
+   <h3>Dreamer</h3>
+   <p>Luôn có những ước mơ và mục tiêu riêng.</p>
+  </div>
+ </div>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobby">
+ <h2 class="title">⭐ MY HOBBIES</h2>
+ <div class="grid">
+  <div class="card blue">
+   <div class="emoji">🎹</div>
+   <h3>Music</h3>
+   <p>Nghe nhạc, học đàn và khám phá những giai điệu mới.</p>
+  </div>
+  <div class="card pink">
+   <div class="emoji">🍥</div>
+   <h3>Anime</h3>
+   <p>Yêu thích anime và những nhân vật thú vị.</p>
+  </div>
+  <div class="card yellow">
+   <div class="emoji">🎮</div>
+   <h3>Gaming</h3>
+   <p>Minecraft, Roblox và nhiều trò chơi khác.</p>
+  </div>
+  <div class="card green">
+   <div class="emoji">🐈</div>
+   <h3>Animals</h3>
+   <p>Mèo, chó, thỏ và những người bạn nhỏ.</p>
+  </div>
+  <div class="card purple">
+   <div class="emoji">📸</div>
+   <h3>Photography</h3>
+   <p>Thích lưu giữ những khoảnh khắc đẹp.</p>
+  </div>
+  <div class="card red">
+   <div class="emoji">🌻</div>
+   <h3>Exploring</h3>
+   <p>Khám phá những điều thú vị xung quanh.</p>
+  </div>
+ </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+ <h2 class="title">🎧 MY MUSIC PLAYER</h2>
+ <div class="music-box">
+  <div style="font-size:55px">🎶</div>
+  <h2>Music is my happiness ♡</h2>
+  <p>Tải file MP3 từ thiết bị để nghe nhạc ngay tại đây!</p>
+
+  <div class="upload-area">
+   <h3>📂 Upload your MP3</h3>
+   <input type="file" id="audioFile" accept="audio/mpeg,audio/mp3,audio/*">
+   <p id="trackName">Chưa có bài hát nào được tải lên.</p>
+   <audio id="player" controls preload="metadata"></audio>
+   <button class="music-btn" onclick="document.getElementById('audioFile').click()">
+    ＋ Chọn nhạc
+   </button>
+   <button class="music-btn" onclick="clearMusic()">
+    ✕ Xóa nhạc
+   </button>
+  </div>
+
+  <h3>💗 My favorite song</h3>
+  <p>SOOBIN – Phía Sau Một Cô Gái</p>
+
+  <iframe class="spotify"
+   src="https://open.spotify.com/embed/track/4BdB08vuS9r4HOoY7GkAxT?utm_source=generator"
+   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+   loading="lazy">
+  </iframe>
+ </div>
+</section>
+
+<!-- ANIMALS -->
+<section id="gallery">
+ <h2 class="title">🐾 CUTE ANIMAL WORLD</h2>
+ <div class="animals">
+  <div class="animal">🐱<p>Kitty</p></div>
+  <div class="animal">🐶<p>Puppy</p></div>
+  <div class="animal">🐰<p>Bunny</p></div>
+  <div class="animal">🐻<p>Bear</p></div>
+  <div class="animal">🐼<p>Panda</p></div>
+  <div class="animal">🦊<p>Fox</p></div>
+  <div class="animal">🐥<p>Chick</p></div>
+  <div class="animal">🦋<p>Butterfly</p></div>
+ </div>
+</section>
+
+<!-- MEMORIES -->
+<section>
+ <h2 class="title">📸 MY LITTLE MEMORIES</h2>
+ <div class="memory">
+  <div class="memory-item pink">🌸</div>
+  <div class="memory-item yellow">🌻</div>
+  <div class="memory-item blue">🌈</div>
+  <div class="memory-item green">🍀</div>
+  <div class="memory-item purple">🦄</div>
+  <div class="memory-item red">🍓</div>
+ </div>
+ <p style="text-align:center;margin-top:15px">
+  Một góc nhỏ để lưu giữ những điều đáng nhớ ♡
+ </p>
+</section>
+
+<!-- GUESTBOOK -->
+<section>
+ <h2 class="title">💌 LEAVE A MESSAGE</h2>
+ <div class="guestbook">
+  <p>Để lại lời nhắn dễ thương cho Lâm nhé!</p>
+  <input id="guestName" placeholder="Tên của cậu...">
+  <textarea id="guestText" rows="3" placeholder="Viết lời nhắn..."></textarea>
+  <button class="btn" onclick="addMessage()">Gửi lời nhắn ♡</button>
+  <div id="messages"></div>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <p>Made with <span style="color:#ff6198">♥</span> by Nguyễn Thuỳ Lâm</p>
+ <p>🌷 Thank you for visiting my little world!</p>
+ <p>© 2026 · All rights reserved</p>
+</footer>
+
+<script>
+const fileInput = document.getElementById('audioFile');
+const player = document.getElementById('player');
+const trackName = document.getElementById('trackName');
+let currentAudioURL = null;
+
+fileInput.addEventListener('change', function() {
+ const file = this.files[0];
+ if (!file) return;
+
+ if (!file.type.startsWith('audio/')) {
+   alert('Vui lòng chọn một file âm thanh!');
+   return;
+ }
+
+ if (currentAudioURL) {
+   URL.revokeObjectURL(currentAudioURL);
+ }
+
+ currentAudioURL = URL.createObjectURL(file);
+ player.src = currentAudioURL;
+ trackName.textContent = '🎵 ' + file.name;
+ player.play().catch(() => {});
+});
+
+function clearMusic() {
+ player.pause();
+ player.removeAttribute('src');
+ player.load();
+
+ if (currentAudioURL) {
+   URL.revokeObjectURL(currentAudioURL);
+   currentAudioURL = null;
+ }
+
+ fileInput.value = '';
+ trackName.textContent = 'Chưa có bài hát nào được tải lên.';
+}
+
+function addMessage() {
+ const name = document.getElementById('guestName').value.trim();
+ const message = document.getElementById('guestText').value.trim();
+
+ if (!name || !message) {
+   alert('Hãy nhập tên và lời nhắn nhé!');
+   return;
+ }
+
+ const item = document.createElement('div');
+ item.className = 'message';
+
+ const title = document.createElement('strong');
+ title.textContent = '💗 ' + name;
+
+ const content = document.createElement('p');
+ content.textContent = message;
+
+ item.append(title, content);
+ document.getElementById('messages').prepend(item);
+
+ document.getElementById('guestName').value = '';
+ document.getElementById('guestText').value = '';
+}
+</script>
+
+</body>
+</html>
